@@ -61,7 +61,7 @@ const Scorecard = ({scorecard, handleSave, handleDelete}) => {
 
     return (
         <Grid
-            style={{ height: 400, width: '100%'}}
+            style={styles.scorecard_outer_grid}
             sx={{
                 '& .MuiDataGrid-cell--editable': {
                     bgcolor: '#e6fff2'
@@ -93,7 +93,7 @@ const Scorecard = ({scorecard, handleSave, handleDelete}) => {
                         <h1 onClick={() => setEditingName(true)}>{cardName}</h1>
                     </Tooltip>
                     :
-                    <Tooltip title={"Press 'Enter' to exit"} placement={'top'}>
+                    <Tooltip title={"Press 'Enter' to set name"} placement={'top'}>
                         <TextField
                             fullWidth
                             inputProps={{style: {textAlign: 'center', fontSize: 'x-large'}}}
@@ -133,7 +133,7 @@ const Scorecard = ({scorecard, handleSave, handleDelete}) => {
                     style={styles.btn}
                 />
                 <AppButton
-                    text={'save'}
+                    text={'Save'}
                     onClick={handleSaveCard}
                     style={styles.btn}
                 />

@@ -28,6 +28,10 @@ export const styles = {
     homePage: {
         textAlign: 'center'
     },
+    scorecard_outer_grid: {
+        height: 410,
+        width: '100%'
+    },
     card_name: {
         width: '100%',
         height: 80,
