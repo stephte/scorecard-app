@@ -1,16 +1,21 @@
 # Scorecard App
-A sample app I used to learn Ruby on Rails.
+An app I made to learn Ruby on Rails.
 
-#Dependencies
+## Dependencies
+download these first with whatever package manager you want
 - ruby-3.0.3
-- mysql
-- yarn
-- bundler
+- mysql (make sure its running too)
+- node
 
-#Set up
-in the parent directory, run the following:
-- 'yarn install'
+download these with given commands
+- yarn (npm install --global yarn) 
+- rails-6.1 (gem install rails -v 6.1)
+- bundler (gem install bundler)
+
+## Set up
+in the apps parent directory, run the following:
 - 'bundle install'
+- 'yarn install'
 - 'rails db:create'
 - 'rails db:migrate'
 - 'rails db:seed'
