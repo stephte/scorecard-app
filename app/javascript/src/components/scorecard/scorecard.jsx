@@ -3,7 +3,7 @@ import React, {useEffect, useState} from "react";
 import { DataGrid } from '@mui/x-data-grid';
 
 import {styles} from "../../styles/styles";
-import {renderCardColumns, renderCardRows, newPlayerRow, formatCard} from "../../utils/data_utils";
+import {renderCardColumns, renderCardRows, newPlayerRow, formatCard} from "../../utils/scorecard_utils";
 import {Grid, TextField, Tooltip} from "@mui/material";
 import AppButton from "../button";
 import ConfirmBox from "../confirm_box";
@@ -23,12 +23,14 @@ const Scorecard = ({scorecard, handleSave, handleDelete}) => {
     };
 
     useEffect(() => {
-        setEditingName(false);
-        setCardName(scorecard.card_name);
-        let rowArr = renderCardRows(scorecard);
-        updateRows(rowArr);
-        setColumns(renderCardColumns(scorecard));
-        setNumPlayers(scorecard.players.length);
+        if(scorecard) {
+            setEditingName(false);
+            setCardName(scorecard.card_name);
+            let rowArr = renderCardRows(scorecard);
+            updateRows(rowArr);
+            setColumns(renderCardColumns(scorecard));
+            setNumPlayers(scorecard.players.length);
+        }
     }, [scorecard]);
 
     const handleAddPlayer = (event) => {
@@ -112,8 +114,7 @@ const Scorecard = ({scorecard, handleSave, handleDelete}) => {
             <DataGrid
                 rows={rows}
                 columns={columns}
-                columnBuffer={0}
-                rowBuffer={0}
+                columnBuffer={5}
                 isCellEditable={(params) => params.row.type === 'player'}
                 autoHeight
                 hideFooter
@@ -147,6 +148,7 @@ const Scorecard = ({scorecard, handleSave, handleDelete}) => {
                 <h4 style={styles.center}>Tips:</h4>
                 <p style={styles.center}>- To edit player names/scores, click on the box and type the score (single or double clicking works)</p>
                 <p style={styles.center}>- To remove a player from the card, erase their name and save</p>
+                <p style={styles.center}>- Have screen full-size to see the entire card at once</p>
             </div>
         </Grid>
     );

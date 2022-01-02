@@ -55,15 +55,11 @@ const CardPage = ({setErrMsg, refreshCardList}) => {
     return (
         <React.Fragment>
             <p style={styles.success}>{successMsg || <span>&nbsp;</span>}</p>
-            {scorecard &&
-                <Grid container direction={'row'} justifyContent={"center"} alignItems={"center"} style={styles.outer_grid}>
-                    <Grid item xs={0.5}/>
+                <Grid container justifyContent={"center"}>
                     <Grid item xs={11}>
                         <Scorecard scorecard={scorecard} handleSave={handleSave} handleDelete={handleDelete}/>
                     </Grid>
-                    <Grid item xs={0.5}/>
                 </Grid>
-            }
         </React.Fragment>
     )
 }

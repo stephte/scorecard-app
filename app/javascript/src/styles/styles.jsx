@@ -1,7 +1,4 @@
 export const styles = {
-    outer_grid: {
-        marginTop: '1%'
-    },
     iconBtn: {
         marginRight: 50
     },
@@ -29,7 +26,7 @@ export const styles = {
         textAlign: 'center'
     },
     scorecard_outer_grid: {
-        height: 410,
+        height: 400,
         width: '100%'
     },
     card_name: {
